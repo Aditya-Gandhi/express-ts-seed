@@ -1,0 +1,6 @@
+{
+  "dbUrl": "mongodb://localhost:27017/",
+  "dbName": "application",
+  "appPort": "3000",
+  "jwtExpiresIn": "24h"
+}

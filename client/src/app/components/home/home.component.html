@@ -1,0 +1,12 @@
+<div class="cover">
+  <div class="cover-text">
+    <h1 class="display-3 text-light font-weight-bold">
+      Welcome User,
+    </h1>
+    <div class="btn-group-vertical">
+      <a href="#" routerLink="/login" *ngIf="!authService.loggedIn()" class="btn btn-outline-light btn-lg px-5">Login</a>
+      <a href="#" routerLink="/register" *ngIf="!authService.loggedIn()" class="btn btn-outline-light btn-lg px-5">SignUp</a>
+      <a href="#" routerLink="/<todo>" *ngIf="authService.loggedIn()" class="btn btn-outline-light btn-lg px-5">Start writing awesome stuff!</a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+<div class="vertical-align">
+  <div class="vertical-align-item">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-md-8 mx-auto">
+          <!-- Custom Success/Error Message -->
+          <div [ngClass]="messageClass" class="" role="alert">
+            {{message}}
+          </div>
+          <div class="card shadow">
+            <div class="card-header">
+              Sign-in
+            </div>
+            <div class="card-body">
+              <!-- Login Form -->
+              <form [formGroup]="form" (submit)="onLoginSubmit()">
+                <!-- Username Field -->
+                <div class="form-group">
+                  <label for="username">Username</label>
+                  <input [ngClass]="{'is-invalid': form.controls.username.errors && form.controls.username.dirty, 'is-valid': form.controls.username.valid && form.controls.username.dirty }"
+                    class="form-control" type="text" name="username" formControlName="username" placeholder="Username" />
+                  <!-- Validation -->
+                  <div class="invalid-feedback">
+                    <li *ngIf="form.controls.username.errors?.required && form.controls.username.dirty">This field is required.</li>
+                  </div>
+                </div>
+                <!-- Password Field  -->
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input [ngClass]="{'is-invalid': form.controls.password.errors && form.controls.password.dirty, 'is-valid': form.controls.password.valid && form.controls.password.dirty }"
+                    class="form-control" type="password" name="password" formControlName="password" placeholder="Password"
+                  />
+                  <!-- Validation -->
+                  <div class="invalid-feedback">
+                    <li *ngIf="form.controls.password.errors?.required && form.controls.password.dirty">This field is required.</li>
+                  </div>
+                </div>
+                <!-- Submit Button -->
+                <button [disabled]="!form.valid || processing" class="btn btn-outline-success" type="submit">
+                  <i class="fa fa-check-circle mr-2"></i>Sign-in</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
